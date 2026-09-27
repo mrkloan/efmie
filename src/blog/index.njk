@@ -13,21 +13,13 @@ description: "Découvrez nos articles, vidéos et actualités sur le Tai Chi Chu
 
 {% set allPosts = collections.posts %}
 {% if allPosts.length > 0 %}
-  <div class="blog__grid">
-    {% for post in allPosts %}
-    {% include "card.njk", {
-      "title": post.data.title,
-      "url": post.url,
-      "date": post.data.date,
-      "excerpt": post.data.description | excerpt(150),
-      "tags": post.data.tags,
-      "image": post.data.image,
-      "featured": loop.index0 < 3
-    } %}
-    {% endfor %}
-  </div>
+<div class="blog__grid">
+  {% for post in allPosts %}
+  {% include "card.njk" %}
+  {% endfor %}
+</div>
 {% else %}
-  <p class="text-center mt-lg">
-    <em>Aucun article publié pour le moment. Revenez bientôt !</em>
-  </p>
+<p class="text-center mt-lg">
+  <em>Aucun article publié pour le moment. Revenez bientôt !</em>
+</p>
 {% endif %}

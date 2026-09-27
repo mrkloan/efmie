@@ -65,7 +65,7 @@ image: "/images/og-image.jpg"
     
     <div class="blog__grid">
       {% for post in recentPosts %}
-      {% include "card.njk", {
+      {% set cardData = {
         "title": post.data.title,
         "url": post.url,
         "date": post.data.date,
@@ -73,6 +73,7 @@ image: "/images/og-image.jpg"
         "tags": post.data.tags,
         "image": post.data.image
       } %}
+      {% include "card.njk" %}
       {% endfor %}
     </div>
     

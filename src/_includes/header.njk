@@ -12,16 +12,16 @@
       
       <ul id="main-nav" class="header__nav-list">
         <li class="header__nav-item">
-          <a href="/" class="header__nav-link {% if page.url == '/' %}is-active{% endif %}">Accueil</a>
+          <a href="/" class="header__nav-link">Accueil</a>
         </li>
         <li class="header__nav-item">
-          <a href="/a-propos/" class="header__nav-link {% if page.url == '/a-propos/' %}is-active{% endif %}">À propos</a>
+          <a href="/a-propos/" class="header__nav-link">À propos</a>
         </li>
         <li class="header__nav-item">
-          <a href="/blog/" class="header__nav-link {% if page.url.startswith('/blog/') %}is-active{% endif %}">Blog</a>
+          <a href="/blog/" class="header__nav-link">Blog</a>
         </li>
         <li class="header__nav-item">
-          <a href="/contact/" class="header__nav-link {% if page.url == '/contact/' %}is-active{% endif %}">Contact</a>
+          <a href="/contact/" class="header__nav-link">Contact</a>
         </li>
       </ul>
     </nav>
@@ -41,5 +41,16 @@
         nav.classList.toggle('is-open');
       });
     }
+    
+    // Set active state based on current URL
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.header__nav-link');
+    navLinks.forEach(link => {
+      const linkPath = new URL(link.href).pathname;
+      if (currentPath === linkPath || 
+          (linkPath === '/blog/' && currentPath.startsWith('/blog/'))) {
+        link.classList.add('is-active');
+      }
+    });
   });
 </script>
