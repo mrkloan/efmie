@@ -15,16 +15,23 @@ This file contains instructions for AI agents and contributors working on the EF
 
 ## ⚠️ CRITICAL: Validation
 
-**All changes MUST pass the GitHub Actions CI build.**
+**BEFORE PUSHING ANY COMMIT**, you **MUST** run:
 
-The CI pipeline automatically runs `npm run build` on every push and PR. 
+```bash
+npm run build
+```
+
+**If the build fails, DO NOT PUSH - fix the errors first!**
+
+The CI pipeline will also run `npm run build` on every push and PR as a secondary check.
 **Do NOT merge changes that fail the CI build.**
 
-If the build fails:
+If CI build fails:
 1. Check the CI logs for the exact error
 2. Fix the issue in your branch
-3. Push the fix and wait for CI to pass
-4. Only then request review/merge
+3. Run `npm run build` locally to verify the fix
+4. Push the fix and wait for CI to pass
+5. Only then request review/merge
 
 ---
 
@@ -245,7 +252,8 @@ The GitHub Actions workflow (`.github/workflows/deploy.yml`) automatically:
 - [ ] **All pages** have unique, descriptive titles
 - [ ] **Descriptions** are meaningful for SEO
 
-### CI-Based Checks
+### Build Validation
+- [ ] **`npm run build` completes without errors** (run locally before pushing)
 - [ ] **CI build passes** (check GitHub Actions status)
 - [ ] **Images** use lazy loading (`loading="lazy"`)
 - [ ] **YouTube embeds** use the `{% youtube %}` shortcode
