@@ -1,7 +1,7 @@
 {
-  "name": "efmie-taichi-website",
+  "name": "efmie",
   "version": "1.0.0",
-  "description": "Site web de l'école EFMIE Tai Chi Chuan",
+  "description": "École des Formes Martiales Internes et Externes (EFMIE) - Tai Chi Chuan et Qi Gong à Neuilly-sur-Seine",
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
@@ -23,8 +23,10 @@
     "eleventy",
     "static-site",
     "tai-chi",
-    "website"
+    "qi-gong",
+    "neuilly-sur-seine",
+    "efmie"
   ],
-  "author": "EFMIE Tai Chi",
+  "author": "EFMIE",
   "license": "Unlicense"
 }

@@ -1,106 +1,110 @@
 ---
 layout: home.njk
-title: "Tai Chi Chuan à Paris - École EFMIE"
-description: "Découvrez l'art du Tai Chi Chuan à Paris avec l'école EFMIE. Cours pour tous niveaux, démonstrations et événements."
+title: "École des Formes Martiales Internes et Externes (EFMIE)"
+description: "Tai Chi Chuan et Qi Gong à Neuilly-sur-Seine - Cours pour tous niveaux, démonstrations et événements"
 image: "/images/og-image.jpg"
 ---
 
-{# Features Section #}
-<section class="section" aria-labelledby="features-title">
+{# Hero Section #}
+{% set heroData = {
+  "title": "EFMIE",
+  "subtitle": "Tai Chi Chuan & Qi Gong",
+  "description": "École des Formes Martiales Internes et Externes à Neuilly-sur-Seine",
+  "background": "/images/hero-bg.jpg",
+  "cta": [
+    { "text": "Découvrir nos disciplines", "url": "/a-propos/", "style": "primary" },
+    { "text": "Horaires et lieu", "url": "/contact/", "style": "secondary" }
+  ]
+} %}
+
+{% include "hero.njk" %}
+
+{# Introduction Section #}
+<section class="section" aria-labelledby="intro-title">
+  <div class="section__inner">
+    <h2 id="intro-title" class="section__title">Bienvenue à l'EFMIE</h2>
+    <p class="section__description text-center">
+      L'École des Formes Martiales Internes et Externes vous propose des cours de 
+      <strong>Tai Chi Chuan</strong> et <strong>Qi Gong</strong> à Neuilly-sur-Seine pour tous niveaux.
+    </p>
+  </div>
+</section>
+
+{# Disciplines Section #}
+<section class="section" aria-labelledby="disciplines-title">
   <div class="section__inner">
     <header class="section__header">
-      <h2 id="features-title" class="section__title">Pourquoi pratiquer le Tai Chi Chuan ?</h2>
+      <h2 id="disciplines-title" class="section__title">Nos disciplines</h2>
       <p class="section__description">
-        Une pratique accessible à tous, pour améliorer votre santé physique et mentale.
+        Deux pratiques complémentaires pour l'équilibre du corps et de l'esprit.
       </p>
     </header>
     
     <div class="features">
       <div class="feature">
         <div class="feature__icon" aria-hidden="true">🧘</div>
-        <h3 class="feature__title">Améliorez votre santé</h3>
+        <h3 class="feature__title">Tai Chi Chuan</h3>
         <p class="feature__description">
-          Renforcez votre système immunitaire, améliorez votre circulation sanguine et réduisez le stress.
-        </p>
-      </div>
-      
-      <div class="feature">
-        <div class="feature__icon" aria-hidden="true">⚖️</div>
-        <h3 class="feature__title">Trouvez l'équilibre</h3>
-        <p class="feature__description">
-          Développez une meilleure coordination, un meilleur équilibre et une posture plus droite.
+          Une gymnastique énergétique chinoise dite "art de longue vie", dont l'intention est 
+          l'équilibre intérieur et le dégagement de l'énergie.
         </p>
       </div>
       
       <div class="feature">
         <div class="feature__icon" aria-hidden="true">🌿</div>
-        <h3 class="feature__title">Apprenez à vous détendre</h3>
+        <h3 class="feature__title">Qi Gong</h3>
         <p class="feature__description">
-          Cultivez la paix intérieure, améliorez votre concentration et réduisez l'anxiété.
+          Une gymnastique chinoise et une science de la respiration fondée sur la connaissance 
+          et la maîtrise de l'énergie vitale.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Benefits Section #}
+<section class="section" aria-labelledby="benefits-title">
+  <div class="section__inner">
+    <header class="section__header">
+      <h2 id="benefits-title" class="section__title">Les bienfaits</h2>
+      <p class="section__description">
+        Améliorez votre santé physique et mentale grâce à nos pratiques.
+      </p>
+    </header>
+    
+    <div class="features">
+      <div class="feature">
+        <div class="feature__icon" aria-hidden="true">💪</div>
+        <h3 class="feature__title">Santé</h3>
+        <p class="feature__description">
+          Conservez une excellente santé et transportez-vous dans une relation profonde avec votre corps.
         </p>
       </div>
       
       <div class="feature">
-        <div class="feature__icon" aria-hidden="true">🥋</div>
-        <h3 class="feature__title">Défendez-vous</h3>
+        <div class="feature__icon" aria-hidden="true">⚖️</div>
+        <h3 class="feature__title">Équilibre</h3>
         <p class="feature__description">
-          Apprenez les principes de la self-défense tout en cultivant la non-violence.
+          La maîtrise de soi vous permet de franchir toutes les difficultés par un apprentissage 
+          de base qui s'exécute dans la douceur.
         </p>
       </div>
-    </div>
-  </div>
-</section>
-
-{# Recent Posts Section #}
-{% set recentPosts = collections.posts | slice(0, 3) %}
-{% if recentPosts.length > 0 %}
-<section class="section" aria-labelledby="recent-posts-title">
-  <div class="section__inner">
-    <header class="section__header">
-      <h2 id="recent-posts-title" class="section__title">Dernières publications</h2>
-      <p class="section__description">
-        Découvrez nos dernières actualités, démonstrations et événements.
-      </p>
-    </header>
-    
-    <div class="blog__grid">
-      {% for post in recentPosts %}
-      {% set cardData = {
-        "title": post.data.title,
-        "url": post.url,
-        "date": post.data.date,
-        "excerpt": post.data.description | excerpt(150),
-        "tags": post.data.tags,
-        "image": post.data.image
-      } %}
-      {% include "card.njk" %}
-      {% endfor %}
-    </div>
-    
-    <div class="text-center mt-lg">
-      <a href="/blog/" class="button button--secondary">Voir toutes les publications</a>
-    </div>
-  </div>
-</section>
-{% endif %}
-
-{# YouTube Video Section (Placeholder) #}
-<section class="section" aria-labelledby="videos-title">
-  <div class="section__inner">
-    <header class="section__header">
-      <h2 id="videos-title" class="section__title">Nos vidéos</h2>
-      <p class="section__description">
-        Découvrez nos démonstrations et tutoriels en vidéo.
-      </p>
-    </header>
-    
-    <div class="video-container">
-      {# Example YouTube embed - will be replaced with actual content #}
-      {% youtube "dQw4w9WgXcQ", "Démonstration EFMIE Tai Chi 2024" %}
-    </div>
-    
-    <div class="text-center mt-lg">
-      <a href="/blog/" class="button button--secondary">Voir toutes les vidéos</a>
+      
+      <div class="feature">
+        <div class="feature__icon" aria-hidden="true">🧠</div>
+        <h3 class="feature__title">Harmonie</h3>
+        <p class="feature__description">
+          Épanouissement individuel et bien-être par l'harmonie entre le corps et l'esprit.
+        </p>
+      </div>
+      
+      <div class="feature">
+        <div class="feature__icon" aria-hidden="true">❤️</div>
+        <h3 class="feature__title">Énergie vitale</h3>
+        <p class="feature__description">
+          Équilibre général entre les parties du corps et les systèmes qui le composent.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -108,12 +112,13 @@ image: "/images/og-image.jpg"
 {# CTA Section #}
 <section class="section" style="background-color: var(--color-primary); color: var(--color-white);">
   <div class="section__inner text-center">
-    <h2 class="section__title" style="color: var(--color-white);">Prêt à commencer ?</h2>
+    <h2 class="section__title" style="color: var(--color-white);">Rejoignez-nous</h2>
     <p class="section__description" style="color: var(--color-secondary-light);">
-      Rejoignez-nous pour un cours d'essai gratuit et découvrez les bienfaits du Tai Chi Chuan.
+      Découvrez les bienfaits du Tai Chi Chuan et du Qi Gong dans un cadre convivial 
+      à Neuilly-sur-Seine.
     </p>
     <div class="mt-lg">
-      <a href="/contact/" class="button button--secondary">Nous contacter</a>
+      <a href="/contact/" class="button button--secondary">Voir les horaires et tarifs</a>
     </div>
   </div>
 </section>

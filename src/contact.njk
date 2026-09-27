@@ -1,14 +1,13 @@
 ---
 layout: page.njk
-title: "Contact - École EFMIE Tai Chi Chuan"
-description: "Contactez l'école EFMIE pour plus d'informations sur nos cours de Tai Chi Chuan à Paris."
+title: "Contact - École des Formes Martiales Internes et Externes (EFMIE)"
+description: "Horaires, lieu et tarifs des cours de Tai Chi Chuan et Qi Gong à Neuilly-sur-Seine."
 ---
 
 <h2>Nous contacter</h2>
 
-<p>
-  Vous avez des questions sur nos cours, nos horaires ou notre approche ? 
-  N'hésitez pas à nous contacter, nous serons ravis de vous répondre.
+<p class="text-center">
+  Pour toute question ou inscription, n'hésitez pas à nous contacter.
 </p>
 
 <div class="features">
@@ -16,144 +15,84 @@ description: "Contactez l'école EFMIE pour plus d'informations sur nos cours de
     <div class="feature__icon" aria-hidden="true">✉️</div>
     <h3 class="feature__title">Par email</h3>
     <p class="feature__description">
-      <a href="mailto:{{ site.contact.email }}" class="feature__description">{{ site.contact.email }}</a>
-    </p>
-  </div>
-  
-  <div class="feature">
-    <div class="feature__icon" aria-hidden="true">📞</div>
-    <h3 class="feature__title">Par téléphone</h3>
-    <p class="feature__description">
-      {% if site.contact.phone %}
-        {{ site.contact.phone }}
-      {% else %}
-        Contactez-nous par email pour obtenir notre numéro
-      {% endif %}
-    </p>
-  </div>
-  
-  <div class="feature">
-    <div class="feature__icon" aria-hidden="true">📍</div>
-    <h3 class="feature__title">Lieux de pratique</h3>
-    <p class="feature__description">
-      {{ site.address.city }}, {{ site.address.region }}
+      <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
     </p>
   </div>
 </div>
 
-<h2>Cours d'essai gratuit</h2>
+<h2>Lieu des cours</h2>
 
 <p>
-  Nous proposons un <strong>cours d'essai gratuit</strong> pour vous permettre de découvrir notre approche 
-  et de rencontrer nos professeurs. C'est l'occasion idéale pour poser toutes vos questions et voir si 
-  le Tai Chi Chuan est fait pour vous.
+  <strong>Complexe KOENIG salle ZEN</strong><br>
+  {{ site.location.address }}<br>
+  {{ site.address.postal_code }} {{ site.address.city }}<br>
+  {{ site.address.country }}
 </p>
 
-<p>
-  <strong>Durée</strong> : 1 heure<br>
-  <strong>Tenue</strong> : Vêtements confortables (prévoyez des vêtements amples)
-</p>
+<h3>Accès</h3>
+<ul>
+  <li><strong>Métro</strong> : {{ site.location.transport.metro }}</li>
+  <li><strong>Bus</strong> : {{ site.location.transport.bus }}</li>
+</ul>
 
-<div class="text-center mt-lg">
-  <a href="mailto:{{ site.contact.email }}?subject=Cours%20d'essai%20gratuit" class="button button--primary">
-    Réserver mon cours d'essai
-  </a>
+<h2>Horaires des cours</h2>
+
+<div class="features">
+  <div class="feature">
+    <div class="feature__icon" aria-hidden="true">📅</div>
+    <h3 class="feature__title">Lundi</h3>
+    <p class="feature__description">
+      {{ site.schedule.lundi.time }}<br>
+      <em>{{ site.schedule.lundi.room }}</em>
+    </p>
+  </div>
+  
+  <div class="feature">
+    <div class="feature__icon" aria-hidden="true">📅</div>
+    <h3 class="feature__title">Mardi</h3>
+    <p class="feature__description">
+      {{ site.schedule.mardi.time }}<br>
+      <em>{{ site.schedule.mardi.room }}</em><br>
+      <small>{{ site.schedule.mardi.level }}</small>
+    </p>
+  </div>
+  
+  <div class="feature">
+    <div class="feature__icon" aria-hidden="true">📅</div>
+    <h3 class="feature__title">Jeudi</h3>
+    <p class="feature__description">
+      {{ site.schedule.jeudi.time }}<br>
+      <em>{{ site.schedule.jeudi.room }}</em><br>
+      <small>{{ site.schedule.jeudi.level }}</small>
+    </p>
+  </div>
 </div>
-
-<h2>Inscription</h2>
-
-<p>
-  Pour vous inscrire à nos cours réguliers, merci de suivre ces étapes :
-</p>
-
-<ol>
-  <li><strong>Assistez à un cours d'essai</strong> : Pour découvrir notre école et notre méthode.</li>
-  <li><strong>Choisissez votre formule</strong> : Cours hebdomadaires, mensuels ou annuels.</li>
-  <li><strong>Finalisez votre inscription</strong> : En ligne ou sur place, avec paiement sécurisé.</li>
-  <li><strong>Commencez à pratiquer</strong> : Rejoignez notre communauté de pratiquants !</li>
-</ol>
 
 <h2>Tarifs</h2>
 
 <p>
-  Nos tarifs varient selon la formule choisie. Voici nos offres principales :
+  <strong>Cotisation annuelle</strong> : {{ site.pricing.annual }}<br>
+  <em>{{ site.pricing.breakdown }}</em><br>
+  <small>{{ site.pricing.details }}</small>
 </p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Formule</th>
-      <th>Prix</th>
-      <th>Durée</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Cours d'essai</td>
-      <td>Gratuit</td>
-      <td>1 séance</td>
-    </tr>
-    <tr>
-      <td>Cours à l'unité</td>
-      <td>20 €</td>
-      <td>1 séance</td>
-    </tr>
-    <tr>
-      <td>Carte 10 séances</td>
-      <td>150 €</td>
-      <td>Validité 3 mois</td>
-    </tr>
-    <tr>
-      <td>Abonnement mensuel</td>
-      <td>60 €</td>
-      <td>Accès illimité</td>
-    </tr>
-    <tr>
-      <td>Abonnement annuel</td>
-      <td>500 €</td>
-      <td>Accès illimité + avantages</td>
-    </tr>
-  </tbody>
-</table>
-
-<p class="mt-md">
-  <em>Tarifs indicatifs - Réductions possibles pour les étudiants, seniors et membres d'une même famille.</em>
+<p>
+  <strong>Paiement</strong> : {{ site.pricing.payment }}
 </p>
 
-<h2>Questions fréquentes</h2>
+<h2>Cours d'essai</h2>
 
-<div class="features">
-  <div class="feature">
-    <h3 class="feature__title">Faut-il avoir de l'expérience ?</h3>
-    <p class="feature__description">
-      Non, nos cours sont accessibles à tous les niveaux, y compris aux complets débutants.
-    </p>
-  </div>
-  
-  <div class="feature">
-    <h3 class="feature__title">Quel équipement est nécessaire ?</h3>
-    <p class="feature__description">
-      Une tenue confortable suffit. Nous pratiquons pieds nus ou avec des chaussures légères.
-    </p>
-  </div>
-  
-  <div class="feature">
-    <h3 class="feature__title">Puis-je essayer avant de m'engager ?</h3>
-    <p class="feature__description">
-      Oui, nous proposons systématiquement un cours d'essai gratuit pour faire connaissance.
-    </p>
-  </div>
-  
-  <div class="feature">
-    <h3 class="feature__title">Y a-t-il des contre-indications ?</h3>
-    <p class="feature__description">
-      Le Tai Chi est une pratique douce. Consultez votre médecin en cas de doute ou de problème de santé.
-    </p>
-  </div>
-</div>
+<p>
+  Nous proposons un <strong>cours d'essai gratuit</strong> pour vous permettre de découvrir 
+  nos disciplines et de rencontrer nos enseignants.
+</p>
+
+<p>
+  <strong>Tenue</strong> : Vêtements confortables et amples
+</p>
 
 <div class="text-center mt-xl">
-  <a href="mailto:{{ site.contact.email }}" class="button button--primary">
-    Nous envoyer un message
+  <a href="mailto:{{ site.contact.email }}?subject=Cours%20d'essai%20gratuit" class="button button--primary">
+    Réserver un cours d'essai
   </a>
 </div>
