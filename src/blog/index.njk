@@ -1,0 +1,33 @@
+---
+layout: _layouts/page.njk
+title: "Blog - École EFMIE Tai Chi Chuan"
+description: "Découvrez nos articles, vidéos et actualités sur le Tai Chi Chuan à Paris."
+---
+
+<h2>Nos dernières publications</h2>
+
+<p class="text-center">
+  Retrouvez ici nos articles, démonstrations en vidéo, comptes-rendus d'événements 
+  et conseils pour votre pratique du Tai Chi Chuan.
+</p>
+
+{% set allPosts = collections.posts %}
+{% if allPosts.length > 0 %}
+  <div class="blog__grid">
+    {% for post in allPosts %}
+    {% include "card.njk", {
+      "title": post.data.title,
+      "url": post.url,
+      "date": post.data.date,
+      "excerpt": post.data.description | excerpt(150),
+      "tags": post.data.tags,
+      "image": post.data.image,
+      "featured": loop.index0 < 3
+    } %}
+    {% endfor %}
+  </div>
+{% else %}
+  <p class="text-center mt-lg">
+    <em>Aucun article publié pour le moment. Revenez bientôt !</em>
+  </p>
+{% endif %}

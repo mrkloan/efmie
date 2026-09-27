@@ -1,0 +1,45 @@
+<header class="header">
+  <div class="header__inner">
+    <a href="/" class="header__logo">
+      <span class="header__logo-text">EFMIE</span>
+      <span class="header__logo-subtitle">Tai Chi Chuan</span>
+    </a>
+    
+    <nav class="header__nav" aria-label="Navigation principale">
+      <button class="header__menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="hamburger"></span>
+      </button>
+      
+      <ul id="main-nav" class="header__nav-list">
+        <li class="header__nav-item">
+          <a href="/" class="header__nav-link {% if page.url == '/' %}is-active{% endif %}">Accueil</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="/a-propos/" class="header__nav-link {% if page.url == '/a-propos/' %}is-active{% endif %}">À propos</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="/blog/" class="header__nav-link {% if page.url.startswith('/blog/') %}is-active{% endif %}">Blog</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="/contact/" class="header__nav-link {% if page.url == '/contact/' %}is-active{% endif %}">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle - minimal JS, progressive enhancement
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('.header__menu-toggle');
+    const nav = document.querySelector('.header__nav-list');
+    
+    if (toggle && nav) {
+      toggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        nav.classList.toggle('is-open');
+      });
+    }
+  });
+</script>

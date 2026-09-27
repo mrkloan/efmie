@@ -1,0 +1,23 @@
+{
+  "title": "EFMIE Tai Chi Chuan",
+  "description": "École de Tai Chi Chuan à Paris - Cours pour tous niveaux, démonstrations et événements",
+  "url": "https://efmie-taichi.fr",
+  "language": "fr",
+  "author": "EFMIE Tai Chi",
+  "image": "/images/og-image.jpg",
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "youtube": ""
+  },
+  "address": {
+    "street": "",
+    "city": "Paris",
+    "region": "Île-de-France",
+    "country": "France"
+  },
+  "contact": {
+    "email": "contact@efmie-taichi.fr",
+    "phone": ""
+  }
+}

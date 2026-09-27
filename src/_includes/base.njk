@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  {# SEO Meta Tags #}
+  {% meta page %}
+  
+  {# Favicon #}
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  
+  {# Preload critical resources #}
+  <link rel="preload" href="/css/styles.css" as="style">
+  
+  {# CSS #}
+  <link rel="stylesheet" href="/css/styles.css">
+  
+  {# Preload fonts #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  {# Structured Data #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "description": "{{ site.description }}",
+    "url": "{{ site.url }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "{{ site.address.city }}",
+      "addressRegion": "{{ site.address.region }}",
+      "addressCountry": "{{ site.address.country }}"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "{{ site.contact.email }}",
+      "contactType": "customer service"
+    }
+  }
+  </script>
+</head>
+<body>
+  {% include "header.njk" %}
+  
+  <main>
+    {{ content | safe }}
+  </main>
+  
+  {% include "footer.njk" %}
+</body>
+</html>

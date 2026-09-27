@@ -1,0 +1,118 @@
+---
+layout: _layouts/home.njk
+title: "Tai Chi Chuan à Paris - École EFMIE"
+description: "Découvrez l'art du Tai Chi Chuan à Paris avec l'école EFMIE. Cours pour tous niveaux, démonstrations et événements."
+image: "/images/og-image.jpg"
+---
+
+{# Features Section #}
+<section class="section" aria-labelledby="features-title">
+  <div class="section__inner">
+    <header class="section__header">
+      <h2 id="features-title" class="section__title">Pourquoi pratiquer le Tai Chi Chuan ?</h2>
+      <p class="section__description">
+        Une pratique accessible à tous, pour améliorer votre santé physique et mentale.
+      </p>
+    </header>
+    
+    <div class="features">
+      <div class="feature">
+        <div class="feature__icon" aria-hidden="true">🧘</div>
+        <h3 class="feature__title">Améliorez votre santé</h3>
+        <p class="feature__description">
+          Renforcez votre système immunitaire, améliorez votre circulation sanguine et réduisez le stress.
+        </p>
+      </div>
+      
+      <div class="feature">
+        <div class="feature__icon" aria-hidden="true">⚖️</div>
+        <h3 class="feature__title">Trouvez l'équilibre</h3>
+        <p class="feature__description">
+          Développez une meilleure coordination, un meilleur équilibre et une posture plus droite.
+        </p>
+      </div>
+      
+      <div class="feature">
+        <div class="feature__icon" aria-hidden="true">🌿</div>
+        <h3 class="feature__title">Apprenez à vous détendre</h3>
+        <p class="feature__description">
+          Cultivez la paix intérieure, améliorez votre concentration et réduisez l'anxiété.
+        </p>
+      </div>
+      
+      <div class="feature">
+        <div class="feature__icon" aria-hidden="true">🥋</div>
+        <h3 class="feature__title">Défendez-vous</h3>
+        <p class="feature__description">
+          Apprenez les principes de la self-défense tout en cultivant la non-violence.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Recent Posts Section #}
+{% set recentPosts = collections.posts | slice(0, 3) %}
+{% if recentPosts.length > 0 %}
+<section class="section" aria-labelledby="recent-posts-title">
+  <div class="section__inner">
+    <header class="section__header">
+      <h2 id="recent-posts-title" class="section__title">Dernières publications</h2>
+      <p class="section__description">
+        Découvrez nos dernières actualités, démonstrations et événements.
+      </p>
+    </header>
+    
+    <div class="blog__grid">
+      {% for post in recentPosts %}
+      {% include "card.njk", {
+        "title": post.data.title,
+        "url": post.url,
+        "date": post.data.date,
+        "excerpt": post.data.description | excerpt(150),
+        "tags": post.data.tags,
+        "image": post.data.image
+      } %}
+      {% endfor %}
+    </div>
+    
+    <div class="text-center mt-lg">
+      <a href="/blog/" class="button button--secondary">Voir toutes les publications</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# YouTube Video Section (Placeholder) #}
+<section class="section" aria-labelledby="videos-title">
+  <div class="section__inner">
+    <header class="section__header">
+      <h2 id="videos-title" class="section__title">Nos vidéos</h2>
+      <p class="section__description">
+        Découvrez nos démonstrations et tutoriels en vidéo.
+      </p>
+    </header>
+    
+    <div class="video-container">
+      {# Example YouTube embed - will be replaced with actual content #}
+      {% youtube "dQw4w9WgXcQ", "Démonstration EFMIE Tai Chi 2024" %}
+    </div>
+    
+    <div class="text-center mt-lg">
+      <a href="/blog/" class="button button--secondary">Voir toutes les vidéos</a>
+    </div>
+  </div>
+</section>
+
+{# CTA Section #}
+<section class="section" style="background-color: var(--color-primary); color: var(--color-white);">
+  <div class="section__inner text-center">
+    <h2 class="section__title" style="color: var(--color-white);">Prêt à commencer ?</h2>
+    <p class="section__description" style="color: var(--color-secondary-light);">
+      Rejoignez-nous pour un cours d'essai gratuit et découvrez les bienfaits du Tai Chi Chuan.
+    </p>
+    <div class="mt-lg">
+      <a href="/contact/" class="button button--secondary">Nous contacter</a>
+    </div>
+  </div>
+</section>

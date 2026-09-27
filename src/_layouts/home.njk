@@ -1,0 +1,16 @@
+---
+layout: _layouts/base.njk
+---
+
+{% include "hero.njk", {
+  "title": "Tai Chi Chuan",
+  "subtitle": "École EFMIE",
+  "description": "Découvrez l'art du Tai Chi Chuan à Paris. Cours pour tous niveaux, démonstrations et événements.",
+  "background": "/images/hero-bg.jpg",
+  "cta": [
+    { "text": "Découvrir", "url": "/a-propos/", "style": "primary" },
+    { "text": "Nous rejoindre", "url": "/contact/", "style": "secondary" }
+  ]
+} %}
+
+{{ content | safe }}
