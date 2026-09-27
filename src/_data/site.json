@@ -1,0 +1,56 @@
+{
+  "title": "École des Formes Martiales Internes et Externes (EFMIE)",
+  "short_title": "EFMIE",
+  "description": "Tai Chi Chuan et Qi Gong à Neuilly-sur-Seine - Cours pour tous niveaux, démonstrations et événements",
+  "url": "https://mrkloan.github.io/efmie/",
+  "language": "fr",
+  "author": "EFMIE",
+  "image": "/images/og-image.jpg",
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "youtube": ""
+  },
+  "address": {
+    "street": "Complexe KOENIG salle ZEN, 23 boulevard du Général Koenig",
+    "city": "Neuilly-sur-Seine",
+    "postal_code": "92200",
+    "region": "Hauts-de-Seine",
+    "country": "France"
+  },
+  "location": {
+    "venue": "Complexe KOENIG salle ZEN",
+    "address": "23 boulevard du Général Koenig, 92200 Neuilly-sur-Seine",
+    "transport": {
+      "metro": "Ligne 1 : Pont de Neuilly",
+      "bus": "Lignes 43, 82, 174 - arrêt Pont de Neuilly"
+    }
+  },
+  "contact": {
+    "email": "efmie92@gmail.com",
+    "phone": ""
+  },
+  "schedule": {
+    "mardi": {
+      "time": "19h00 – 21h00",
+      "room": "salle Vitalité",
+      "level": "niveau débutant"
+    },
+    "lundi": {
+      "time": "19h00 – 21h00",
+      "room": "salle Zen",
+      "level": ""
+    },
+    "jeudi": {
+      "time": "19h00 – 21h00",
+      "room": "salle Zen",
+      "level": "niveau intermédiaire et avancé"
+    }
+  },
+  "pricing": {
+    "annual": "200 €",
+    "breakdown": "160 € + 40 € d'assurance",
+    "details": "licence, adhésion, cours",
+    "payment": "à l'ordre de l'association EFMIE (paiement par virement bancaire ou chèque)"
+  }
+}

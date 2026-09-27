@@ -1,0 +1,116 @@
+---
+layout: page.njk
+title: "Contact - École des Formes Martiales Internes et Externes (EFMIE)"
+description: "Retrouvez nos horaires de cours, lieu, tarifs et informations pratiques pour rejoindre l'EFMIE à Neuilly-sur-Seine."
+---
+
+<h2>Nous contacter</h2>
+
+<p class="text-center">
+  Vous souhaitez découvrir nos disciplines, obtenir des informations sur nos cours ou 
+  vous inscrire ? N'hésitez pas à nous contacter.
+</p>
+
+<div class="features">
+  <div class="feature">
+    <div class="feature__icon" aria-hidden="true">✉️</div>
+    <h3 class="feature__title">Par email</h3>
+    <p class="feature__description">
+      Envoyez-nous un message à :<br>
+      <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
+    </p>
+  </div>
+</div>
+
+<h2>Lieu des cours</h2>
+
+<p>
+  Nos cours ont lieu au :<br>
+  <strong>{{ site.location.venue }}</strong><br>
+  {{ site.location.address }}<br>
+  {{ site.address.postal_code }} {{ site.address.city }}<br>
+  {{ site.address.country }}
+</p>
+
+<h3>Accès en transports en commun</h3>
+<ul>
+  <li><strong>Métro</strong> : {{ site.location.transport.metro }}</li>
+  <li><strong>Bus</strong> : {{ site.location.transport.bus }}</li>
+</ul>
+
+<h2>Horaires des cours - Saison {{ "now" | date("YYYY") }} / {{ "now" | date("YYYY") | int + 1 }}</h2>
+
+<p>
+  Nous proposons des cours adaptés à tous les niveaux, du débutant à l'avancé :
+</p>
+
+<div class="features">
+  <div class="feature">
+    <div class="feature__icon" aria-hidden="true">📅</div>
+    <h3 class="feature__title">Lundi</h3>
+    <p class="feature__description">
+      <strong>{{ site.schedule.lundi.time }}</strong><br>
+      <em>Salle : {{ site.schedule.lundi.room }}</em>
+    </p>
+  </div>
+  
+  <div class="feature">
+    <div class="feature__icon" aria-hidden="true">📅</div>
+    <h3 class="feature__title">Mardi</h3>
+    <p class="feature__description">
+      <strong>{{ site.schedule.mardi.time }}</strong><br>
+      <em>Salle : {{ site.schedule.mardi.room }}</em><br>
+      <small>Niveau : {{ site.schedule.mardi.level }}</small>
+    </p>
+  </div>
+  
+  <div class="feature">
+    <div class="feature__icon" aria-hidden="true">📅</div>
+    <h3 class="feature__title">Jeudi</h3>
+    <p class="feature__description">
+      <strong>{{ site.schedule.jeudi.time }}</strong><br>
+      <em>Salle : {{ site.schedule.jeudi.room }}</em><br>
+      <small>Niveau : {{ site.schedule.jeudi.level }}</small>
+    </p>
+  </div>
+</div>
+
+<h2>Tarifs</h2>
+
+<p>
+  <strong>Cotisation annuelle</strong> : {{ site.pricing.annual }}
+</p>
+
+<p>
+  <em>Détail : {{ site.pricing.breakdown }}</em><br>
+  <small>(comprenant {{ site.pricing.details }})</small>
+</p>
+
+<p>
+  <strong>Modalités de paiement</strong> : {{ site.pricing.payment }}
+</p>
+
+<h2>Cours d'essai gratuit</h2>
+
+<p>
+  Nous vous proposons un <strong>cours d'essai gratuit</strong> sans 
+  engagement pour vous permettre de :
+</p>
+
+<ul>
+  <li>Découvrir nos disciplines et notre approche pédagogique</li>
+  <li>Rencontrer nos enseignants et les autres pratiquants</li>
+  <li>Vérifier que nos cours correspondent à vos attentes</li>
+</ul>
+
+<p>
+  <strong>Tenue conseillée</strong> : Prévoyez des vêtements confortables et amples qui 
+  ne restreignent pas vos mouvements. Les cours se pratiquent pieds nus ou avec des 
+  chaussures légères et souples.
+</p>
+
+<div class="text-center mt-xl">
+  <a href="mailto:{{ site.contact.email }}?subject=Cours%20d'essai%20gratuit" class="button button--primary">
+    Réserver un cours d'essai
+  </a>
+</div>

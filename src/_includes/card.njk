@@ -1,0 +1,33 @@
+<article class="card {% if featured %}card--featured{% endif %}">
+  {% if image %}
+  <div class="card__image">
+    {% image image, alt, caption %}
+  </div>
+  {% endif %}
+  
+  <div class="card__content">
+    {% if category %}
+    <span class="card__category">{{ category }}</span>
+    {% endif %}
+    
+    <h3 class="card__title">
+      <a href="{{ url }}" class="card__link">{{ title }}</a>
+    </h3>
+    
+    {% if date %}
+    <time class="card__date" datetime="{{ date | isoDate }}">{{ date | date }}</time>
+    {% endif %}
+    
+    {% if excerpt %}
+    <p class="card__excerpt">{{ excerpt }}</p>
+    {% endif %}
+    
+    {% if tags %}
+    <div class="card__tags">
+      {% for tag in tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</article>

@@ -1,0 +1,38 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <a href="/" class="footer__logo">
+        <span class="footer__logo-text">EFMIE</span>
+        <span class="footer__logo-subtitle">Tai Chi Chuan</span>
+      </a>
+      <p class="footer__tagline">L'art du mouvement et de l'équilibre</p>
+    </div>
+    
+    <nav class="footer__nav" aria-label="Navigation secondaire">
+      <ul class="footer__nav-list">
+        <li class="footer__nav-item">
+          <a href="/" class="footer__nav-link">Accueil</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="/a-propos/" class="footer__nav-link">À propos</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="/blog/" class="footer__nav-link">Blog</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="/contact/" class="footer__nav-link">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    
+    <div class="footer__contact">
+      <p class="footer__contact-item">
+        <a href="mailto:{{ site.contact.email }}" class="footer__contact-link">{{ site.contact.email }}</a>
+      </p>
+    </div>
+  </div>
+  
+  <div class="footer__bottom">
+    <p class="footer__copyright">&copy; {{ "now" | date("yyyy") }} EFMIE Tai Chi Chuan. Tous droits réservés.</p>
+  </div>
+</footer>

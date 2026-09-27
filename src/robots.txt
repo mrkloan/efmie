@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /404/
+Disallow: /search/
+
+Sitemap: https://efmie-taichi.fr/sitemap.xml
+
+# Allow all other pages to be crawled

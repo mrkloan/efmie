@@ -1,0 +1,127 @@
+---
+layout: home.njk
+title: "École des Formes Martiales Internes et Externes (EFMIE)"
+description: "Tai Chi Chuan et Qi Gong à Neuilly-sur-Seine - Cours pour tous niveaux, démonstrations et événements"
+image: "/images/og-image.jpg"
+---
+
+{# Hero Section #}
+{% set heroData = {
+  "title": "EFMIE",
+  "subtitle": "Tai Chi Chuan & Qi Gong",
+  "description": "École des Formes Martiales Internes et Externes (EFMIE) à Neuilly-sur-Seine",
+  "background": "/images/hero-bg.jpg",
+  "cta": [
+    { "text": "Découvrir nos disciplines", "url": "/a-propos/", "style": "primary" },
+    { "text": "Horaires et lieu", "url": "/contact/", "style": "secondary" }
+  ]
+} %}
+
+{% include "hero.njk" %}
+
+{# Introduction Section #}
+<section class="section" aria-labelledby="intro-title">
+  <div class="section__inner">
+    <h2 id="intro-title" class="section__title">Bienvenue à l'EFMIE</h2>
+    <p class="section__description text-center">
+      Découvrez une approche holistique du bien-être à travers le <strong>Tai Chi Chuan</strong> 
+      et le <strong>Qi Gong</strong>. Nos cours à Neuilly-sur-Seine s'adressent à tous, 
+      des débutants aux pratiquants confirmés.
+    </p>
+  </div>
+</section>
+
+{# Disciplines Section #}
+<section class="section" aria-labelledby="disciplines-title">
+  <div class="section__inner">
+    <header class="section__header">
+      <h2 id="disciplines-title" class="section__title">Nos disciplines</h2>
+      <p class="section__description">
+        Deux arts énergétiques complémentaires pour cultiver harmonie et vitalité.
+      </p>
+    </header>
+    
+    <div class="features">
+      <div class="feature">
+        <div class="feature__icon" aria-hidden="true">🧘</div>
+        <h3 class="feature__title">Tai Chi Chuan</h3>
+        <p class="feature__description">
+          Art martial interne chinois, le Tai Chi Chuan allie mouvements lents et fluides, 
+          respiration consciente et concentration pour harmoniser corps et esprit.
+        </p>
+      </div>
+      
+      <div class="feature">
+        <div class="feature__icon" aria-hidden="true">🌿</div>
+        <h3 class="feature__title">Qi Gong</h3>
+        <p class="feature__description">
+          Pratique millénaire de santé, le Qi Gong repose sur des exercices de respiration, 
+          des postures et des mouvements pour cultiver et équilibrer l'énergie vitale.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Benefits Section #}
+<section class="section" aria-labelledby="benefits-title">
+  <div class="section__inner">
+    <header class="section__header">
+      <h2 id="benefits-title" class="section__title">Les bienfaits</h2>
+      <p class="section__description">
+        Des pratiques aux multiples vertus pour le corps, l'esprit et l'équilibre intérieur.
+      </p>
+    </header>
+    
+    <div class="features">
+      <div class="feature">
+        <div class="feature__icon" aria-hidden="true">💪</div>
+        <h3 class="feature__title">Santé physique</h3>
+        <p class="feature__description">
+          Renforcez votre corps, améliorez votre souplesse et préservez votre vitalité 
+          grâce à des mouvements doux et progressifs.
+        </p>
+      </div>
+      
+      <div class="feature">
+        <div class="feature__icon" aria-hidden="true">⚖️</div>
+        <h3 class="feature__title">Équilibre mental</h3>
+        <p class="feature__description">
+          Cultivez la sérénité, réduisez le stress et développez une meilleure concentration 
+          par la pratique régulière.
+        </p>
+      </div>
+      
+      <div class="feature">
+        <div class="feature__icon" aria-hidden="true">🧠</div>
+        <h3 class="feature__title">Harmonie intérieure</h3>
+        <p class="feature__description">
+          Retrouvez l'équilibre entre corps et esprit.
+        </p>
+      </div>
+      
+      <div class="feature">
+        <div class="feature__icon" aria-hidden="true">❤️</div>
+        <h3 class="feature__title">Énergie vitale</h3>
+        <p class="feature__description">
+          Stimulez et harmonisez la circulation de votre énergie pour un mieux-être 
+          durable au quotidien.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# CTA Section #}
+<section class="section" style="background-color: var(--color-primary); color: var(--color-white);">
+  <div class="section__inner text-center">
+    <h2 class="section__title" style="color: var(--color-white);">Rejoignez-nous</h2>
+    <p class="section__description" style="color: var(--color-secondary-light);">
+      Découvrez les bienfaits du Tai Chi Chuan et du Qi Gong dans un cadre convivial 
+      à Neuilly-sur-Seine.
+    </p>
+    <div class="mt-lg">
+      <a href="/contact/" class="button button--secondary">Voir les horaires et tarifs</a>
+    </div>
+  </div>
+</section>
