@@ -202,12 +202,13 @@ Automatically generates title, description, OpenGraph, and Twitter meta tags fro
 Global site data is in `src/_data/site.json`:
 ```json
 {
-  "title": "EFMIE Tai Chi Chuan",
-  "description": "École de Tai Chi Chuan à Paris",
-  "url": "https://efmie-taichi.fr",
+  "title": "École des Formes Martiales Internes et Externes (EFMIE)",
+  "short_title": "EFMIE",
+  "description": "Tai Chi Chuan et Qi Gong à Neuilly-sur-Seine - Cours pour tous niveaux, démonstrations et événements",
+  "url": "https://mrkloan.github.io/efmie/",
   "language": "fr",
   "contact": {
-    "email": "contact@efmie-taichi.fr"
+    "email": "efmie92@gmail.com",
   }
 }
 ```

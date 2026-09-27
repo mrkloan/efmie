@@ -1,14 +1,19 @@
 ---
 layout: page.njk
 title: "Blog - École EFMIE Tai Chi Chuan"
-description: "Découvrez nos articles, vidéos et actualités sur le Tai Chi Chuan à Paris."
+description: "Retrouvez nos articles, conseils pratiques et actualités sur le Tai Chi Chuan et le Qi Gong."
 ---
 
 <h2>Nos dernières publications</h2>
 
 <p class="text-center">
-  Retrouvez ici nos articles, démonstrations en vidéo, comptes-rendus d'événements 
-  et conseils pour votre pratique du Tai Chi Chuan.
+  Découvrez nos articles sur les disciplines que nous enseignons, des conseils pratiques 
+  pour votre entraînement, des comptes-rendus d'événements et des réflexions sur la philosophie 
+  du Tai Chi Chuan et du Qi Gong. 
+</p>
+
+<p class="text-center">
+  <em>De nouveaux contenus sont régulièrement ajoutés pour vous accompagner dans votre pratique.</em>
 </p>
 
 {% set allPosts = collections.posts %}
@@ -20,6 +25,11 @@ description: "Découvrez nos articles, vidéos et actualités sur le Tai Chi Chu
 </div>
 {% else %}
 <p class="text-center mt-lg">
-  <em>Aucun article publié pour le moment. Revenez bientôt !</em>
+  <em>Aucun article publié pour le moment. Revenez bientôt pour découvrir nos prochains contenus !</em>
 </p>
 {% endif %}
+
+<p class="text-center mt-lg">
+  Vous avez une question ou un sujet que vous aimeriez voir traité ? 
+  <a href="mailto:{{ site.contact.email }}?subject=Suggestion%20d'article">Contactez-nous</a> !
+</p>
