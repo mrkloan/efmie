@@ -128,4 +128,6 @@ Toutes les contributions sont les bienvenues ! Voir [AGENTS.md](AGENTS.md) pour 
 
 ## 📄 Licence
 
-Ce projet est sous licence Unlicense - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+Ce projet est protégé par copyright. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+**Tous droits réservés** - École des Formes Martiales Internes et Externes (EFMIE) 2024
