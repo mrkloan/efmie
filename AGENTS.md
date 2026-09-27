@@ -13,30 +13,18 @@ This file contains instructions for AI agents and contributors working on the EF
 
 ---
 
-## ⚠️ CRITICAL: Pre-Commit Validation
+## ⚠️ CRITICAL: Validation
 
-**BEFORE PUSHING ANY COMMIT**, you **MUST** run the following validation:
+**All changes MUST pass the GitHub Actions CI build.**
 
-```bash
-# 1. Install dependencies (if package-lock.json changed)
-npm install
+The CI pipeline automatically runs `npm run build` on every push and PR. 
+**Do NOT merge changes that fail the CI build.**
 
-# 2. Run production build to catch template errors
-npm run build
-
-# 3. Verify build succeeded (exit code 0)
-#    If build fails, DO NOT PUSH - fix the errors first!
-
-# 4. Test locally (optional but recommended)
-npm start
-# Visit http://localhost:8080 and verify all pages render correctly
-```
-
-**Automated validation script** (add to `package.json` scripts):
-```bash
-# Run this before committing
-npm run validate
-```
+If the build fails:
+1. Check the CI logs for the exact error
+2. Fix the issue in your branch
+3. Push the fix and wait for CI to pass
+4. Only then request review/merge
 
 ---
 
@@ -226,62 +214,18 @@ Access in templates via `site.title`, `site.contact.email`, etc.
 ### Local Development
 ```bash
 npm install
-npm start      # Starts dev server at http://localhost:8080 with watch
 npm run build  # Production build to _site/
-npm run debug  # Build with DEBUG output for troubleshooting
 ```
 
 ### CI/CD Pipeline
 
 The GitHub Actions workflow (`.github/workflows/deploy.yml`) automatically:
-1. Runs on push to `main` or PR to `main`
+1. Runs on push to any branch
 2. Installs dependencies with `npm ci`
 3. Builds the site with `npm run build`
-4. Deploys to GitHub Pages
+4. Fails if build errors occur
 
-**Important**: The CI will fail if the build fails locally. Always test before pushing.
-
----
-
-## Git Hooks (Recommended)
-
-To prevent errors from being committed, set up a pre-commit hook:
-
-### Option 1: Manual setup with Husky
-
-```bash
-# Install husky
-npm install husky --save-dev
-
-# Enable git hooks
-npx husky install
-
-# Add hook
-npx husky add .husky/pre-commit "npm run build"
-```
-
-### Option 2: Simple pre-commit script
-
-Create `.git/hooks/pre-commit` (make it executable):
-```bash
-#!/bin/sh
-
-echo "Running pre-commit validation..."
-npm run build
-
-if [ $? -ne 0 ]; then
-  echo "❌ Build failed - commit aborted"
-  exit 1
-fi
-
-echo "✅ Build succeeded - commit allowed"
-exit 0
-```
-
-Make it executable:
-```bash
-chmod +x .git/hooks/pre-commit
-```
+**Always check CI status before merging.**
 
 ---
 
@@ -301,10 +245,8 @@ chmod +x .git/hooks/pre-commit
 - [ ] **All pages** have unique, descriptive titles
 - [ ] **Descriptions** are meaningful for SEO
 
-### Technical Checks
-- [ ] **`npm run build` completes without errors** (exit code 0)
-- [ ] **All pages render correctly** in local dev server
-- [ ] **No console errors** in the browser
+### CI-Based Checks
+- [ ] **CI build passes** (check GitHub Actions status)
 - [ ] **Images** use lazy loading (`loading="lazy"`)
 - [ ] **YouTube embeds** use the `{% youtube %}` shortcode
 - [ ] **package-lock.json** is up to date (if package.json changed)
@@ -463,24 +405,15 @@ title: "\u00c0 propos"  # ✅ Also works
 
 ## Testing
 
-### Local Testing
-1. Run `npm start`
-2. Visit `http://localhost:8080`
-3. Navigate through ALL pages:
-   - Home (`/`)
-   - About (`/a-propos/`)
-   - Contact (`/contact/`)
-   - Blog (`/blog/`)
-   - Individual blog posts
-4. Check for console errors (F12 in browser)
-5. Test responsive design:
-   - Mobile view (320px wide)
-   - Tablet view (768px wide)
-   - Desktop view (1200px+ wide)
-6. Test mobile menu toggle
-7. Verify all YouTube embeds load correctly
+### CI/CD Pipeline Validation
 
-### Pre-Commit Checklist
+The GitHub Actions workflow (`.github/workflows/deploy.yml`) automatically:
+1. Runs on push to any branch
+2. Installs dependencies with `npm ci`
+3. Builds the site with `npm run build`
+4. Fails if build errors occur
+
+**Always check CI status before merging.**
 - [ ] `npm run build` completes with exit code 0
 - [ ] All pages render correctly in local dev
 - [ ] No console errors in browser
